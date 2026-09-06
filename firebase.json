@@ -1,0 +1,31 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "pkl-attendance",
+          "appId": "1:169850125671:android:675e2483f0c9bfc65503c2",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "pkl-attendance",
+          "configurations": {
+            "android": "1:169850125671:android:675e2483f0c9bfc65503c2",
+            "ios": "1:169850125671:ios:756d14bad50463c75503c2",
+            "macos": "1:169850125671:ios:756d14bad50463c75503c2",
+            "web": "1:169850125671:web:44e8b08089acb3565503c2",
+            "windows": "1:169850125671:web:0ad5fcce806e4b585503c2"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "database": "default",
+    "location": "asia-southeast1",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}
