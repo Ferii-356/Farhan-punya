@@ -19,6 +19,9 @@ workflows:
           if [ -d "pkl_attendance_app" ]; then
             cd pkl_attendance_app
           fi
+          rm -f ios/Flutter/Generated.xcconfig
+          rm -f ios/Flutter/flutter_export_environment.sh
+          flutter build ios --config-only
           cd ios && pod install
       - name: Build Unsigned iOS IPA
         script: |
