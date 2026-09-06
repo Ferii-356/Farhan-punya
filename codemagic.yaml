@@ -28,7 +28,11 @@ workflows:
           if [ -d "pkl_attendance_app" ]; then
             cd pkl_attendance_app
           fi
-          flutter build ipa --release --no-codesign
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          mv Runner.app Payload/
+          zip -r ../../../app-release.ipa Payload
     artifacts:
-      - pkl_attendance_app/build/ios/ipa/*.ipa
-      - build/ios/ipa/*.ipa
+      - app-release.ipa
+      - pkl_attendance_app/app-release.ipa
