@@ -10,12 +10,22 @@ workflows:
     scripts:
       - name: Set up Flutter packages
         script: |
+          if [ -d "pkl_attendance_app" ]; then
+            cd pkl_attendance_app
+          fi
           flutter pub get
       - name: Install CocoaPods dependencies
         script: |
+          if [ -d "pkl_attendance_app" ]; then
+            cd pkl_attendance_app
+          fi
           cd ios && pod install
       - name: Build Unsigned iOS IPA
         script: |
+          if [ -d "pkl_attendance_app" ]; then
+            cd pkl_attendance_app
+          fi
           flutter build ipa --release --no-codesign
     artifacts:
+      - pkl_attendance_app/build/ios/ipa/*.ipa
       - build/ios/ipa/*.ipa
